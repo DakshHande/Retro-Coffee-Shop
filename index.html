@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Coffee Shop</title>
+    <style>
+        /* 80s Retro Background */
+        body {
+            background-color: black;
+            color: #FF00FF;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(to right, #FF00FF, #00FFFF);
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #222;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FF00FF;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #00FFFF;
+            background-color: #333;
+        }
+
+        /* Layout with Sidebars */
+        .container {
+            display: flex;
+        }
+
+        /* Left Sidebar */
+        .sidebar-left {
+            width: 20%;
+            background-color: #111;
+            padding: 20px;
+            height: 100vh;
+            text-align: center;
+            border-right: 2px solid #FF00FF;
+        }
+
+        /* Right Sidebar */
+        .sidebar-right {
+            width: 20%;
+            background-color: #111;
+            padding: 20px;
+            height: 100vh;
+            text-align: center;
+            border-left: 2px solid #FF00FF;
+        }
+
+        /* Main Content */
+        .content {
+            width: 60%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #00FFFF, #FF00FF);
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        /* Retro Button */
+        .retro-button {
+            background-color: #FF00FF;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #00FFFF;
+            text-shadow: 2px 2px 3px black;
+            cursor: pointer;
+        }
+
+        .retro-button:hover {
+            background-color: #00FFFF;
+            border: 2px solid #FF00FF;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        ☕ Welcome to Retro Coffee Shop ☕
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms&Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="system.html">Order System Online</a>
+    </nav>
+
+    <!-- Main Layout -->
+    <div class="container">
+        <!-- Left Sidebar -->
+        <div class="sidebar-left">
+            <h3>☕ Coffee Specials ☕</h3>
+            <p>80s Classic Espresso</p>
+            <p>Retro Cappuccino</p>
+            <p>Neon Latte</p>
+            <p>Vintage Mocha</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <h2>☕ Welcome to the 80s Vibe ☕</h2>
+            <p>
+                Step into a time machine and enjoy the **best coffee** with a **retro 1980s** atmosphere.  
+                Our shop is filled with **neon lights, classic music, and the aroma of freshly brewed coffee**.  
+                Enjoy **handmade beverages** and **freshly baked snacks** while immersing yourself in nostalgia.  
+            </p>
+            <button class="retro-button">View Our Menu</button>
+        </div>
+
+        <!-- Right Sidebar -->
+        <div class="sidebar-right">
+            <h3>🎵 Now Playing 🎵</h3>
+            <p>Michael Jackson - Billie Jean</p>
+            <p>Queen - Another One Bites the Dust</p>
+            <p>Madonna - Like a Virgin</p>
+            <p>A-Ha - Take On Me</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Retro Coffee Shop | Designed for 80s Lovers
+    </footer>
+
+</body>
+</html>
