@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Retro Coffee Shop</title>
+    <style>
+        /* 80s Retro Background */
+        body {
+            background-color: black;
+            color: #FF00FF;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #FF00FF, #00FFFF);
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px black;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #222;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #FF00FF;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: inline-block;
+        }
+
+        nav a:hover {
+            color: #00FFFF;
+            background-color: #333;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin: 20px auto;
+            width: 50%;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #FF00FF;
+            background-color: black;
+            color: #00FFFF;
+        }
+
+        /* Buttons for Menu Selection */
+        .menu-buttons {
+            margin: 20px;
+        }
+
+        .menu-button {
+            background-color: #FF00FF;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #00FFFF;
+            cursor: pointer;
+        }
+
+        .menu-button:hover {
+            background-color: #00FFFF;
+            border: 2px solid #FF00FF;
+        }
+
+        /* Menu Section */
+        .menu {
+            width: 60%;
+            margin: auto;
+            text-align: left;
+            padding: 20px;
+            border: 2px solid #FF00FF;
+            background-color: #111;
+        }
+
+        .menu h2 {
+            text-align: center;
+            color: #00FFFF;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #FF00FF;
+        }
+
+        .order-button, .remove-button {
+            background-color: #FF00FF;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 15px;
+            border: 2px solid #00FFFF;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .order-button:hover, .remove-button:hover {
+            background-color: #00FFFF;
+            border: 2px solid #FF00FF;
+        }
+
+        /* Order History */
+        .order-history {
+            width: 60%;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #00FFFF;
+            background-color: #111;
+            color: #FF00FF;
+        }
+
+        .order-history h2 {
+            text-align: center;
+            color: #00FFFF;
+        }
+
+        .proceed-button {
+            background-color: #00FFFF;
+            color: black;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: 2px solid #FF00FF;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .proceed-button:hover {
+            background-color: #FF00FF;
+            border: 2px solid #00FFFF;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #00FFFF, #FF00FF);
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        ☕ Retro Coffee Shop - Menu ☕
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="searchBox" placeholder="Search for an item..." onkeyup="searchMenu()">
+    </div>
+
+    <!-- Veg & Non-Veg Buttons -->
+    <div class="menu-buttons">
+        <button class="menu-button" onclick="showMenu('veg')">Veg</button>
+        <button class="menu-button" onclick="showMenu('nonveg')">Non-Veg</button>
+        <button class="menu-button" onclick="showMenu('all')">All</button>
+    </div>
+
+    <!-- Menu Items -->
+    <div class="menu" id="menuList">
+        <h2>🍽️ Our Special Menu 🍽️</h2>
+
+        <!-- Veg Items -->
+        <div class="menu-item veg">
+            <span>Grilled Cheese Sandwich</span>
+            <span>₹150</span>
+            <button class="order-button" onclick="orderItem('Grilled Cheese Sandwich', 150)">Order</button>
+        </div>
+        <div class="menu-item veg">
+            <span>Classic Veg Burger</span>
+            <span>₹180</span>
+            <button class="order-button" onclick="orderItem('Classic Veg Burger', 180)">Order</button>
+        </div>
+
+        <!-- Non-Veg Items -->
+        <div class="menu-item nonveg">
+            <span>Chicken Burger</span>
+            <span>₹220</span>
+            <button class="order-button" onclick="orderItem('Chicken Burger', 220)">Order</button>
+        </div>
+    </div>
+
+    <!-- Order History -->
+    <div class="order-history" id="orderHistory">
+        <h2>🛒 Your Order History 🛒</h2>
+        <p id="orderList">No orders yet.</p>
+        <h3>Total Amount: ₹<span id="totalAmount">0</span></h3>
+        <button class="proceed-button" onclick="proceedOrder()">Proceed</button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 Retro Coffee Shop | Designed for 80s Lovers
+    </footer>
+
+    <script>
+        let totalAmount = 0;
+        let orderDetails = [];
+
+        function orderItem(name, price) {
+            totalAmount += price;
+            orderDetails.push({ name, price });
+
+            updateOrderHistory();
+        }
+
+        function removeItem(index) {
+            totalAmount -= orderDetails[index].price;
+            orderDetails.splice(index, 1);
+
+            updateOrderHistory();
+        }
+
+        function updateOrderHistory() {
+            let orderList = document.getElementById('orderList');
+            orderList.innerHTML = '';
+
+            orderDetails.forEach((item, index) => {
+                orderList.innerHTML += `${item.name} - ₹${item.price} 
+                    <button class="remove-button" onclick="removeItem(${index})">Remove</button><br>`;
+            });
+
+            document.getElementById('totalAmount').innerText = totalAmount;
+            if (orderDetails.length === 0) {
+                orderList.innerHTML = 'No orders yet.';
+            }
+        }
+
+        function showMenu(type) {
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.display = item.classList.contains(type) || type === 'all' ? 'flex' : 'none';
+            });
+        }
+
+        function searchMenu() {
+            let searchValue = document.getElementById('searchBox').value.toLowerCase();
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(searchValue) ? 'flex' : 'none';
+            });
+        }
+
+        function proceedOrder() {
+            window.location.href = "contact.html";
+        }
+    </script>
+
+</body>
+</html>
